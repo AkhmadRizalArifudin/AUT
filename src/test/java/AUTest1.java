@@ -4,6 +4,7 @@
  */
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -47,7 +48,7 @@ public class AUTest1 {
         driver.findElement(By.id("buttoncheck")).click();
         String expectedResult = "Rsdio button is checked and it's value is No";
         String actualResult = driver.findElement(By.className("radiobutton")).getText();
-        Assert.assertEquals(actualResulr, expectedResult);
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @AfterTest
