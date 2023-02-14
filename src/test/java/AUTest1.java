@@ -52,6 +52,22 @@ public class AUTest1 {
         String expectedResult = "Home Page";
         String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
         Assert.assertEquals(actualResult, expectedResult);
+        if(expectedResult == actualResult){
+            System.out.println("Login Success");
+        }
+    }
+    
+    @Test
+    public void faillogin(){
+        driver.get("http://localhost/index.html");
+//        
+//        driver.findElement(By.id("buttoncheck")).click();
+        
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin12");
+        String expectedResult = "Home Page";
+        String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
+        Assert.assertEquals(actualResult, expectedResult);
     }
     
     @Test
@@ -60,8 +76,7 @@ public class AUTest1 {
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
-        driver.findElement(By.id("username")).sendKeys("admin");
-        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.xpath("/html/body/nav/div/a[1]")).click();
         String expectedResult = "Home Page";
         String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
         Assert.assertEquals(actualResult, expectedResult);
@@ -73,10 +88,21 @@ public class AUTest1 {
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
-        driver.findElement(By.id("username")).sendKeys("admin");
-        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.xpath("/html/body/nav/div/a[2]")).click();
         String expectedResult = "Profile Page";
         String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+    
+    @Test
+    public void kliklogout(){
+        driver.get("http://localhost/index.html");
+//        
+//        driver.findElement(By.id("buttoncheck")).click();
+        
+        driver.findElement(By.xpath("/html/body/nav/div/a[3]")).click();
+        String expectedResult = "Login";
+        String actualResult = driver.findElement(By.xpath("/html/body/div/h1")).getText();
         Assert.assertEquals(actualResult, expectedResult);
     }
 
