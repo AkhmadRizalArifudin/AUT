@@ -46,7 +46,7 @@ public class AUTest1 {
 
     @Test
     public void login(){
-        driver.get("http://pluto18.epizy.com");
+        driver.get("http://localhost/index.php");
 //            driver.wait(5000);
 //
 //        driver.findElement(By.id("buttoncheck")).click();
@@ -64,7 +64,7 @@ public class AUTest1 {
     
     @Test
     public void faillogin(){
-        driver.get("http://pluto18.epizy.com");
+        driver.get("http://localhost/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
@@ -78,7 +78,7 @@ public class AUTest1 {
     
     @Test
     public void klikhome(){
-        driver.get("http://pluto18.epizy.com");
+        driver.get("http://localhost/index.php");
         driver.findElement(By.id("username")).sendKeys("admin");
         driver.findElement(By.id("password")).sendKeys("admin123");
         driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
@@ -90,7 +90,7 @@ public class AUTest1 {
     
     @Test
     public void klikprofile(){
-        driver.get("http://pluto18.epizy.com");
+        driver.get("http://localhost/index.php");
         driver.findElement(By.id("username")).sendKeys("admin");
         driver.findElement(By.id("password")).sendKeys("admin123");
         driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
@@ -103,7 +103,7 @@ public class AUTest1 {
     
     @Test
     public void kliklogout(){
-        driver.get("http://pluto18.epizy.com");
+        driver.get("http://localhost/index.php");
         driver.findElement(By.id("username")).sendKeys("admin");
         driver.findElement(By.id("password")).sendKeys("admin123");
         driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
