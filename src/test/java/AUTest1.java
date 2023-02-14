@@ -42,7 +42,7 @@ public class AUTest1 {
     }
 
     @Test
-    public void firstTry(){
+    public void login(){
         driver.get("http://localhost/index.html");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
@@ -50,6 +50,32 @@ public class AUTest1 {
         driver.findElement(By.id("username")).sendKeys("admin");
         driver.findElement(By.id("password")).sendKeys("admin123");
         String expectedResult = "Home Page";
+        String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+    
+    @Test
+    public void klikhome(){
+        driver.get("http://localhost/index.html");
+//        
+//        driver.findElement(By.id("buttoncheck")).click();
+        
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        String expectedResult = "Home Page";
+        String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
+        Assert.assertEquals(actualResult, expectedResult);
+    }
+    
+    @Test
+    public void klikprofile(){
+        driver.get("http://localhost/index.html");
+//        
+//        driver.findElement(By.id("buttoncheck")).click();
+        
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        String expectedResult = "Profile Page";
         String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
         Assert.assertEquals(actualResult, expectedResult);
     }
