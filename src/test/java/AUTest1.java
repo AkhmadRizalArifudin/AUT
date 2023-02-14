@@ -43,7 +43,7 @@ public class AUTest1 {
 
     @Test
     public void login(){
-        driver.get("http://localhost/index.html");
+        driver.get("http://localhost/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
@@ -59,7 +59,7 @@ public class AUTest1 {
     
     @Test
     public void faillogin(){
-        driver.get("http://localhost/index.html");
+        driver.get("http://localhost/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
@@ -72,7 +72,7 @@ public class AUTest1 {
     
     @Test
     public void klikhome(){
-        driver.get("http://localhost/index.html");
+        driver.get("http://localhost/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
@@ -84,7 +84,7 @@ public class AUTest1 {
     
     @Test
     public void klikprofile(){
-        driver.get("http://localhost/index.html");
+        driver.get("http://localhost/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
@@ -96,7 +96,7 @@ public class AUTest1 {
     
     @Test
     public void kliklogout(){
-        driver.get("http://localhost/index.html");
+        driver.get("http://localhost/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
