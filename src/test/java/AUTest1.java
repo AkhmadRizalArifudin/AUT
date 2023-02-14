@@ -40,6 +40,7 @@ public class AUTest1 {
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
 
