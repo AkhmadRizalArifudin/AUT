@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="1" failures="0" name="TestCase1" time="0.948" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="AUTest1" time="5.799" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="16.0.1+9-24"/>
@@ -14,6 +14,7 @@
     <property name="user.script" value=""/>
     <property name="user.country" value="ID"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="test" value="AUTest1"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="user.dir" value="C:\Users\ASUS\Documents\NetBeansProjects\SeleniumTry"/>
     <property name="java.vm.compressedOopsMode" value="32-bit"/>
@@ -44,7 +45,7 @@
     <property name="java.class.path" value="C:\Program Files\NetBeans-16\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="16"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-16\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=AUTest1 -Dmaven.ext.class.path=C:\Program Files\NetBeans-16\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
     <property name="java.home" value="C:\Program Files\Java\jdk-16.0.1"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -59,5 +60,9 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="TestCase1" name="firstTry" time="0.948"/>
+  <testcase classname="AUTest1" name="faillogin" time="2.153"/>
+  <testcase classname="AUTest1" name="klikhome" time="1.876"/>
+  <testcase classname="AUTest1" name="kliklogout" time="0.343"/>
+  <testcase classname="AUTest1" name="klikprofile" time="1.128"/>
+  <testcase classname="AUTest1" name="login" time="0.299"/>
 </testsuite>

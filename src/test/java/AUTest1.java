@@ -4,6 +4,9 @@
  */
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,18 +40,19 @@ public class AUTest1 {
     public void setUp(){
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
         driver = new ChromeDriver(options);
     }
 
     @Test
     public void login(){
-        driver.get("http://localhost/AUTng-main/index.php");
-//        
+        driver.get("http://localhost/index.php");
+//            driver.wait(5000);
+//
 //        driver.findElement(By.id("buttoncheck")).click();
-        
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.findElement(By.id("username")).sendKeys("admin");
         driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
         String expectedResult = "Home Page";
         String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
         Assert.assertEquals(actualResult, expectedResult);
@@ -65,17 +69,18 @@ public class AUTest1 {
         
         driver.findElement(By.id("username")).sendKeys("admin");
         driver.findElement(By.id("password")).sendKeys("admin12");
-        String expectedResult = "Home Page";
-        String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
+        driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
+        String expectedResult = "Wrong username or password!";
+        String actualResult = driver.findElement(By.xpath("/html/body/div/div")).getText();
         Assert.assertEquals(actualResult, expectedResult);
     }
     
     @Test
     public void klikhome(){
         driver.get("http://localhost/index.php");
-//        
-//        driver.findElement(By.id("buttoncheck")).click();
-        
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
         driver.findElement(By.xpath("/html/body/nav/div/a[1]")).click();
         String expectedResult = "Home Page";
         String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
@@ -85,8 +90,9 @@ public class AUTest1 {
     @Test
     public void klikprofile(){
         driver.get("http://localhost/index.php");
-//        
-//        driver.findElement(By.id("buttoncheck")).click();
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
         
         driver.findElement(By.xpath("/html/body/nav/div/a[2]")).click();
         String expectedResult = "Profile Page";
@@ -97,8 +103,9 @@ public class AUTest1 {
     @Test
     public void kliklogout(){
         driver.get("http://localhost/index.php");
-//        
-//        driver.findElement(By.id("buttoncheck")).click();
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        driver.findElement(By.xpath("/html/body/div/form/input[3]")).click();
         
         driver.findElement(By.xpath("/html/body/nav/div/a[3]")).click();
         String expectedResult = "Login";
