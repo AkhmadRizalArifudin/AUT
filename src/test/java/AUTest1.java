@@ -46,8 +46,11 @@ public class AUTest1 {
         driver.get("http://localhost/index.html");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
-        String expectedResult = "Login";
-        String actualResult = driver.findElement(By.xpath("/html/body/div/h1")).getText();
+        
+        driver.findElement(By.id("username")).sendKeys("admin");
+        driver.findElement(By.id("password")).sendKeys("admin123");
+        String expectedResult = "Home Page";
+        String actualResult = driver.findElement(By.xpath("/html/body/div/h2")).getText();
         Assert.assertEquals(actualResult, expectedResult);
     }
 
