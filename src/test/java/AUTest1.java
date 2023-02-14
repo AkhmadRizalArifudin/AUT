@@ -43,7 +43,7 @@ public class AUTest1 {
 
     @Test
     public void login(){
-        driver.get("http://localhost/index.php");
+        driver.get("http://localhost:80/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
@@ -59,7 +59,7 @@ public class AUTest1 {
     
     @Test
     public void faillogin(){
-        driver.get("http://localhost/index.php");
+        driver.get("http://localhost:80/index.php");
 //        
 //        driver.findElement(By.id("buttoncheck")).click();
         
