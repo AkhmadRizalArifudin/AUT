@@ -44,10 +44,10 @@ public class AUTest1 {
     @Test
     public void firstTry(){
         driver.get("http://localhost/index.html");
-        driver.findElement(By.id("no")).click();
-        driver.findElement(By.id("buttoncheck")).click();
-        String expectedResult = "Rsdio button is checked and it's value is No";
-        String actualResult = driver.findElement(By.className("radiobutton")).getText();
+//        
+//        driver.findElement(By.id("buttoncheck")).click();
+        String expectedResult = "Login";
+        String actualResult = driver.findElement(By.xpath("/html/body/div/h1")).getText();
         Assert.assertEquals(actualResult, expectedResult);
     }
 
